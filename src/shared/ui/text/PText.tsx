@@ -1,11 +1,11 @@
-import { ComponentPropsWithoutRef, ElementType} from "react";
+import { ComponentPropsWithoutRef, ElementType } from "react";
 import s from "./ptext.module.css";
 
 type PTextProps<T extends ElementType = 'p'> = {
   variant?: 'regular16' | 'bold'
 } & ComponentPropsWithoutRef<T>;
 
-const PText = <T extends ElementType = 'p'>(
+export const PText = <T extends ElementType = 'p'>(
   props: PTextProps<T> & Omit<ComponentPropsWithoutRef<T>, keyof PTextProps<T>>
 ) => {
   const {
@@ -14,5 +14,5 @@ const PText = <T extends ElementType = 'p'>(
     ...rest
   } = props;
 
-  return <Component className={`${variant && s[variant]}  ${className}`} {...rest} />;
+  return <Component className={`${variant && s[variant]}  ${className} ${s.text}`} {...rest} />;
 };

@@ -1,11 +1,12 @@
 html {
     height: 100%;
+
 }
 
 body {
     background: linear-gradient(70deg,
     #fffa97, #ff0741, #4efce2);
-    min-height: 100%;
+    min-height: 97%;
 }
 
 * {
